@@ -49,3 +49,7 @@ jspm_packages
 .yarn-integrity
 
 
+.idea/.gitignore
+.idea/docker-node-hello-world.iml
+.idea/modules.xml
+.idea/vcs.xml

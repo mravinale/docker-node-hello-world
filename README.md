@@ -2,12 +2,12 @@
 
 Build the Docker image:
 ```
-$docker build -t helloword .
+docker build -t helloword .
 ```
 
 Run the Docker image:
 ```
-$docker run -it helloword
+docker run -it helloword
 ```
 
 Run Docker image with port binding:

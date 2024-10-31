@@ -1,26 +1,10 @@
-const express = require('express')
-    , app = express()
-    , exphbs = require('express-handlebars')
-    , assembleHbsHelpers = require('handlebars-helpers')()
-    , path = require('path')
-    , hbs = exphbs.create({
-        extname: '.hbs',
-        defaultLayout: 'default',
-        layoutsDir: './app/views/layouts',
-        partialsDir: './app/views/partials',
-        helpers: assembleHbsHelpers
-    });
+var express = require('express');
+var app = express()
 
-app.engine('hbs', hbs.engine);
-app.set('view cache', false);
-app.set('view engine', 'hbs');
-app.set('views', path.join( __dirname, './views'));
-app.use(express.static(path.join(process.cwd(), './app/public'), {
-    maxAge: (60 * 60 * 24 * 7) * 1000 // x 1000 because Express middleware expects miliseconds and not seconds
-}));
+app.get('/', function (req, res) {
+    res.send('Hello World!');
+});
 
-app.get('/', require('./views/home'));
-
-const server = app.listen(3000, '0.0.0.0', function() {
-    console.info('Express server running: ' + JSON.stringify(server.address()));
+const server = app.listen(18000, function() {
+    console.info('Express server running: ' + server.address().port);
 });
