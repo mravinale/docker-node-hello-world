@@ -12,12 +12,12 @@ docker run -it helloword
 
 Run Docker image with port binding:
 ```
-docker run -it -p 18000:3000 -t helloworld
+docker run -it -p 18000:18000 -t helloworld
 ```
 
 Build + run the Docker image with port binding:
 ```
-docker build -t helloworld . && docker run -p 18000:3000 -it -t helloworld
+docker build -t helloworld . && docker run -p 18000:18000 -it -t helloworld
 ```
 
 Once running app is available on: http://localhost:18000/
